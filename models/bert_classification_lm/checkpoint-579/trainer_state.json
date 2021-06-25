@@ -1,0 +1,49 @@
+{
+  "best_metric": 0.34763529896736145,
+  "best_model_checkpoint": "../models/bert_classification_lm/checkpoint-579",
+  "epoch": 3.0,
+  "global_step": 579,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "epoch": 1.0,
+      "eval_loss": 0.4460376501083374,
+      "eval_runtime": 1.1875,
+      "eval_samples_per_second": 325.04,
+      "step": 193
+    },
+    {
+      "epoch": 1.04,
+      "learning_rate": 2e-05,
+      "loss": 0.6069,
+      "step": 200
+    },
+    {
+      "epoch": 2.0,
+      "eval_loss": 0.37041234970092773,
+      "eval_runtime": 1.1886,
+      "eval_samples_per_second": 324.739,
+      "step": 386
+    },
+    {
+      "epoch": 2.07,
+      "learning_rate": 4e-05,
+      "loss": 0.3745,
+      "step": 400
+    },
+    {
+      "epoch": 3.0,
+      "eval_loss": 0.34763529896736145,
+      "eval_runtime": 1.196,
+      "eval_samples_per_second": 322.729,
+      "step": 579
+    }
+  ],
+  "max_steps": 1930,
+  "num_train_epochs": 10,
+  "total_flos": 409307043741696,
+  "trial_name": null,
+  "trial_params": null
+}
