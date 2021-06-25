@@ -1,0 +1,37 @@
+1	I	_	PRON	PRP	_	4	nsubj	_	_
+2	never	_	ADV	RB	_	4	advmod	_	_
+3	really	_	ADV	RB	_	4	advmod	_	_
+4	showed	_	VERB	VBD	_	0	root	_	_
+5	any _	DET	DT	_	6	det	_	_
+6	sadness	_	NOUN	NN	_	4	obj	_	_
+7	when	_	SCONJ	WRB	_	11	mark	_	_
+8	I	_	PRON	PRP	_	11	nsubj	_	_
+9	am	_	AUX	VBP	_	11	cop	_	_
+10	with	_	ADP	IN	_	11	case	_	_
+11  someone	_	PRON	NN	_	4	advcl	_	_
+11	.	_	PUNCT	.	_	4	punct	_	_
+
+1	he	_	PRON	PRP	_	5	nsubj	_	_
+2	is	_	AUX	VBZ	_	5	cop	_	_
+3	a	_	DET	DT	_	5	det	_	_
+4	good	_	ADJ	JJ	_	5	amod	_	_
+5	person	_	NOUN	NN	_	9	conj	_	_
+6	,	_	PUNCT	.	_	9	punct	_	_
+7	and	_	CCONJ	CC	_	9	cc	_	_
+8	I	_	PRON	PRP	_	9	nsubj	_	_
+9	know	_	VERB	VBP	_	0	root	_	_
+10	that	_	PRON	DT	_	9	obj	_	_
+11 	.	_	PUNCT	.	_	5	punct	_	_
+
+1	last	_	PRON	PRP	_	5	nsubj	_	_
+2	year	_	AUX	VBZ	_	5	cop	_	_
+3	I	_	DET	DT	_	5	det	_	_
+4	went	_	ADJ	JJ	_	5	amod	_	_
+5	through	_	NOUN	NN	_	9	conj	_	_
+6	a	_	PUNCT	.	_	9	punct	_	_
+7	huge	_	CCONJ	CC	_	9	cc	_	_
+8	amount	_	PRON	PRP	_	9	nsubj	_	_
+9	of	_	VERB	VBP	_	0	root	_	_
+10	stress	_	PRON	DT	_	9	obj	_	_
+11 	.	_	PUNCT	.	_	5	punct	_	_
+
