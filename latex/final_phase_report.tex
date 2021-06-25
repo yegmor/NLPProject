@@ -72,7 +72,10 @@
 \large{\textbf{Filename:} 3\_word2vec.ipynb}
 
 \section*{Code}
+We use Gensim implementation of word2vec: https://radimrehurek.com/gensim/models/word2vec.html
+
 For this part we have three Word2Vec models, named as dep\_w2v\_model, anx\_w2v\_model, and all\_w2v\_model. Moreover, with boolean parameters, load and save, the model will be saved and/or loaded in the my\_word2vec function.
+
 
 \begin{table}[ht]
 	\caption{Word2Vec vocabulary size} 
@@ -84,6 +87,8 @@ For this part we have three Word2Vec models, named as dep\_w2v\_model, anx\_w2v\
 
 
 \section*{Results and Examples}
+In this part, we used t-SNE visualization. t-SNE is a non-linear dimensionality reduction algorithm that attempts to represent high-dimensional data and the underlying relationships between vectors in a lower-dimensional space.
+
 To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}), and other words from the vocabulary (in \textcolor{green}{**green**})
 
 \begin{figure}[H]
@@ -97,7 +102,7 @@ To make the visualizations more relevant, we will look at the relationships betw
 \large{\textbf{Filename:} 4\_tokenization.ipynb}
 
 \section*{Code}
-In this part we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
+In this part, we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
 
 \section*{Results and Examples}
 
@@ -135,8 +140,16 @@ The reported Unlabeled Attachment Score (UAS) on our test file was 86.05.
 \part{Language Model}
 \large{\textbf{Filename:} 5\_language-model.ipynb}
 
+In this part, we have develop a model of the text that we can then use to generate new sequences of text.
+
 \section*{Code}
-In this part we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
+We will start by preparing the data for modeling. 
+We have picked a length of 50 words for the length of the input sequences, and we have attached 1 output word at the end of the sequences. Afterwards, we save the long list of sequences.
+
+
+For our language model, after loading our dataset, we used an Embedding Layer to learn the representation of words, and a Long Short-Term Memory (LSTM) recurrent neural network to learn to predict words based on their context. More precisely, we have used a two LSTM hidden layers with 100 memory cells each. Following, we have a dense fully connected layer with 100 neurons connects to the LSTM hidden layers to interpret the features extracted from the sequence.
+
+After the model is trained, we use generate\_seq function that takes as input the model, the tokenizer, input sequence length, the seed text, and the number of words to generate. 
 
 \section*{Results and Examples}
 \begin{figure}[H]
@@ -147,13 +160,12 @@ In this part we have used KFold to split our data into train and test. Afterward
 
 
 \newpage
-\part{Fine Tuning}
+\part{Fine-tuning}
 
 \section*{Classification}
 \large{\textbf{Filename:} 6\_finetune\_classification.ipynb}
 
 \subsection*{Code}
-In this part we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
 
 \begin{figure}[H]
 	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/classification-lm_train.png}}
@@ -178,8 +190,14 @@ In this part we have used KFold to split our data into train and test. Afterward
 \section*{Language Model}
 \large{\textbf{Filename:} 7\_finetune\_language-model.ipynb}
 
+In this part, we have used our Reddit dataset to fine-tune our distilgpt-2.
+
+For this purpose, we first prepare the dataset and build a TextDataset, load the pre-trained GPT-2 model and tokenizer, initialize Trainer with TrainingArguments, and finally, train and save the model. 
+
 \subsection*{Code}
-In this part we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
+The TextDataset is a custom implementation of the Pytroch Dataset class implemented by the transformers(4.2.2) library.
+\\Also, we have used the tokenzier from the distilgpt-2 model on huggingface.
+\\Afterwards, we initialize Trainer class that provides an API for feature-complete training, and we set the Hyperparameters we are going to use in the TrainingArguments.
 
 \subsection*{Results and Examples}
 \begin{figure}[H]
@@ -210,7 +228,7 @@ In this part we have used KFold to split our data into train and test. Afterward
 	\url{https://gmihaila.github.io/tutorial_notebooks/gpt2_finetune_classification/}
 	
 	\bibitem{bib3}
-	\url{https://colab.research.google.com/github/philschmid/fine-tune-GPT-2/blob/master/Fine_tune_a_non_English_GPT_2_Model_with_Huggingface.ipynb#scrollTo=hKBSyNLgqF9K}
+	\url{https://colab.research.google.com/github/philschmid/fine-tune-GPT-2/blob/master/Fine_tune_a_non_English_GPT_2_Model_with_Huggingface.ipynb}
 	
 	\bibitem{bib4}
 	\url{https://github.com/huggingface/notebooks/blob/master/examples/language_modeling.ipynb}
