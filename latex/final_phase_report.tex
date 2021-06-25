@@ -86,6 +86,12 @@ For this part we have three Word2Vec models, named as dep\_w2v\_model, anx\_w2v\
 \section*{Results and Examples}
 To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}), and other words from the vocabulary (in \textcolor{green}{**green**})
 
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/word2vec_depression_man.png}}
+	\caption{t-SNE visualization for man}
+	\label{word2vec_depression_man}
+\end{figure}
+
 \newpage
 \part{Tokenization}
 \large{\textbf{Filename:} 4\_tokenization.ipynb}
@@ -103,6 +109,15 @@ In this part, we used Stanza, which is a a Python NLP Package, and a collection 
 More specifically, we used their \href{http://stanza.run/}{Online Demo} to create a manual .CoNLL file based on our dataset. Later, we can use \href{https://universaldependencies.org/conllu_viewer.html}{Universal Dependencies CoNLL viewer} to automatically generate parse tree from .CoNLL file.
 
 \section*{Results and Examples}
+
+The reported Unlabeled Attachment Score (UAS) on our test file was 86.05.
+
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/parsing_examples_UDtree.png}}
+	\caption{Universal Dependencies for 10 sentences}
+	\label{parsing_examples}
+\end{figure}
+
 \begin{enumerate}
 	\item I never really showed any sadness when I am with someone.
 	\item he is a good person, and I know that.
@@ -124,7 +139,11 @@ More specifically, we used their \href{http://stanza.run/}{Online Demo} to creat
 In this part we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
 
 \section*{Results and Examples}
-
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/normal-lm_examples.png}}
+	\caption{Examples for simple language model}
+	\label{normal-lm_examples}
+\end{figure}
 
 
 \newpage
@@ -136,7 +155,26 @@ In this part we have used KFold to split our data into train and test. Afterward
 \subsection*{Code}
 In this part we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
 
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/classification-lm_train.png}}
+	\caption{Training bert classification language model}
+	\label{classification-lm_train}
+\end{figure}
+
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/classification-lm_eval.png}}
+	\caption{Evaluating bert classification language model}
+	\label{classification-lm_eval}
+\end{figure}
+
 \subsection*{Results and Examples}
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/classification-lm_examples.png}}
+	\caption{Examples for bert classification model}
+	\label{classification-lm_examples}
+\end{figure}
+
+
 \section*{Language Model}
 \large{\textbf{Filename:} 7\_finetune\_language-model.ipynb}
 
@@ -144,7 +182,11 @@ In this part we have used KFold to split our data into train and test. Afterward
 In this part we have used KFold to split our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we compute <UNK> on our test dataset. 
 
 \subsection*{Results and Examples}
-
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/finetune-lm_examples.png.png}}
+	\caption{Examples for distilgpt2 language model}
+	\label{finetune-lm_examples.png}
+\end{figure}
 %
 %\begin{figure}[H]
 %	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{images/table.png}}
@@ -192,6 +234,7 @@ In this part we have used KFold to split our data into train and test. Afterward
 	\url{https://huggingface.co/transformers/custom_datasets.html}
 	
 	\bibitem{bib11}
+	\url{https://colab.research.google.com/github/google/sentencepiece/blob/master/python/sentencepiece_python_module_example.ipynb#scrollTo=-k5KbVgiYae-}
 	
 \end{thebibliography}
 
