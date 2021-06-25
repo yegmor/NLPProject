@@ -164,6 +164,6 @@ if __name__ == "__main__":
         print("Final evaluation on test set",)
         parser.model.eval()
         UAS, dependencies = parser.parse(test_data)
-        print("***dependecies:", dependencies)
+        print("\n*********\ndependecies:", dependencies)
         print("- test UAS: {:.2f}".format(UAS * 100.0))
         print("Done!")

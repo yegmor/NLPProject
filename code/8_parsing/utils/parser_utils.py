@@ -374,7 +374,7 @@ def load_and_preprocess_data(reduced=True):
     test_set = read_conll(os.path.join(config.data_path, config.test_file),
                           lowercase=config.lowercase)
 
-    print("\n*********\ntest set!!!!!", test_set)
+    # print("\n*********\ntest set!!!!!", test_set)
     if reduced:
         train_set = train_set[:1000]
         dev_set = dev_set[:500]
