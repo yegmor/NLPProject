@@ -6,7 +6,8 @@
 \usepackage{color}                    
 \usepackage{hyperref}
 \usepackage{ptext}
-\usepackage{graphicx}   
+\usepackage{graphicx}  
+\usepackage[dvipsnames]{xcolor} 
 %\usepackage[export]{adjustbox}                     
 %\settextfont[Scale=.9]{Calibri}
 
@@ -59,13 +60,16 @@
 	\newpage
 	
 	\begin{abstract}
-		In this project, we tried to use Natural Language Processing to better understand Depression and Anxiety posts. The dataset is gathered from Reddit communities \href{https://www.reddit.com/r/depression}{r/depression} and \href{https://www.reddit.com/r/Anxiety}{r/Anxiety}.
+		In this project, we tried to use Natural Language Processing to better understand Depression and Anxiety posts.\footnote{\textcolor{RedViolet}{I am deeply sorry that some of the things discussed in this report may be unpleasant, disturbing, uncomfortable, and sometimes sad. In my opinion, we should pay good attention to mental health of people around us. This project is my effort to dig a little deeper into this important matter.}}
+		The dataset is gathered from Reddit communities \href{https://www.reddit.com/r/depression}{r/depression} and \href{https://www.reddit.com/r/Anxiety}{r/Anxiety}.
 		\\[10pt]
 		
 		For this project, at first, we wrote a project proposal (\href{https://docs.google.com/document/d/1tHGEmEgn8-sp8MD72d8NjnZsq-GpVupzsMWgnqaGi-Y/edit?usp=sharing}{Google Docs}), and afterward, in the first phase (\href{https://docs.google.com/document/d/1Jc2ELhweU01Tbf0WalU7wVQABdAV4w50mhQnmMpU2mM/edit?usp=sharing}{Google Docs}), we gathered data and made some exploratory data analysis. 
 		\\[10pt]
 		
-		In the final phase, we went deeper and tried various NLP tasks, such as, computing Word2Vec, Tokenization, Parsing, and creating a language model based on our dataset.
+		In the final phase, we went deeper and tried various NLP tasks, such as, computing Word2Vec, Tokenization, Parsing, and creating a language model based on our dataset.\\
+		
+		
 	\end{abstract}
 	
 	\newpage
@@ -89,7 +93,7 @@
 	
 	\subsection{Results and Examples}
 	
-	\subsubsection{Analyze common words}
+	\subsubsection{Analyze Common Words}
 	In this part, we used t-SNE visualization. t-SNE is a non-linear dimensionality reduction algorithm that attempts to represent high-dimensional data and the underlying relationships between vectors in a lower-dimensional space.
 	
 	To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}).\\
@@ -121,12 +125,42 @@
 			\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/word2vec_all_life.png}}
 			\caption{t-SNE visualization for life based on all\_w2v\_model}
 			\label{word2vec_all_life}
-		\end{figure}
-		
+		\end{figure}	
 	\end{itemize}
 	
-
+	\subsubsection{Find Biases}
+	To find biases that often are based on gender, we have calculated the cosine distance of each query word from the words in target\_list = ["woman", "man", "girl", "boy"].
+	\begin{itemize}
+		\item In the Figure \ref{w2v_cos_similar_kill}, we can see that males are much more closer to the word \emph{kill} in all the models (ignoring the difference between boy and woman resulted from all\_w2v\_model).
+		
+		\begin{figure}[H]
+			\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/w2v_cos_similar_kill.png}}
+			\caption{Cosine distance between \emph{kill} and target list words}
+			\label{w2v_cos_similar_kill}
+		\end{figure}
+		
+		\vspace{5mm}
 	
+		\item Similarly, in the Figure \ref{w2v_cos_similar_suicide}, males are closer to the word \emph{suicide} comparing to females in all the models.
+		
+		\begin{figure}[H]
+			\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/w2v_cos_similar_suicide.png}}
+			\caption{Cosine distance between \emph{suicide} and target list words}
+			\label{w2v_cos_similar_suicide}
+		\end{figure}
+	
+		\vspace{5mm}
+		
+		\item Like previous figures, in the Figure \ref{w2v_cos_similar_dead}, males are closer to the word \emph{dead} in most cases in all the models (without considering the difference between boy and woman resulted from anxiety\_w2v\_model).
+		
+		\begin{figure}[H]
+			\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/w2v_cos_similar_dead.png}}
+			\caption{Cosine distance between \emph{dead} and target list words}
+			\label{w2v_cos_similar_dead}
+		\end{figure}
+
+	\end{itemize}
+
 	\newpage
 	\part{Tokenization}
 	\large{\textbf{Filename:} 4\_tokenization.ipynb}

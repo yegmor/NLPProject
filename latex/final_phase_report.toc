@@ -2,22 +2,23 @@
 \contentsline {section}{\numberline {1}Overview}{6}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Code}{6}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Results and Examples}{6}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Analyze common words}{6}{subsubsection.1.2.1}%
-\contentsline {part}{II\hspace {1em}Tokenization}{10}{part.2}%
-\contentsline {section}{\numberline {2}Overview}{10}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Code}{10}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Results and Examples}{10}{subsection.2.2}%
-\contentsline {part}{III\hspace {1em}Parsing}{12}{part.3}%
-\contentsline {section}{\numberline {3}Overview}{12}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Results and Examples}{12}{subsection.3.1}%
-\contentsline {part}{IV\hspace {1em}Language Model}{16}{part.4}%
-\contentsline {section}{\numberline {4}Overview}{16}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Code}{16}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Results and Examples}{17}{subsection.4.2}%
-\contentsline {part}{V\hspace {1em}Fine-tuning}{19}{part.5}%
-\contentsline {section}{\numberline {5}Classification}{19}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Code}{19}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Results and Examples}{20}{subsection.5.2}%
-\contentsline {section}{\numberline {6}Language Model}{21}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Code}{21}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Results and Examples}{22}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Analyze Common Words}{6}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Find Biases}{9}{subsubsection.1.2.2}%
+\contentsline {part}{II\hspace {1em}Tokenization}{11}{part.2}%
+\contentsline {section}{\numberline {2}Overview}{11}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Code}{11}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Results and Examples}{11}{subsection.2.2}%
+\contentsline {part}{III\hspace {1em}Parsing}{13}{part.3}%
+\contentsline {section}{\numberline {3}Overview}{13}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Results and Examples}{13}{subsection.3.1}%
+\contentsline {part}{IV\hspace {1em}Language Model}{17}{part.4}%
+\contentsline {section}{\numberline {4}Overview}{17}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Code}{17}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Results and Examples}{18}{subsection.4.2}%
+\contentsline {part}{V\hspace {1em}Fine-tuning}{20}{part.5}%
+\contentsline {section}{\numberline {5}Classification}{20}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Code}{20}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Results and Examples}{21}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Language Model}{22}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Code}{22}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Results and Examples}{23}{subsection.6.2}%
