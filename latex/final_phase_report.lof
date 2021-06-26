@@ -1,6 +1,8 @@
-\contentsline {figure}{\numberline {1}{\ignorespaces t-SNE visualization for man}}{7}{figure.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces conll format of 6th and 7th sentences}}{11}{figure.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Universal Dependencies for 10 sentences}}{12}{figure.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Outputs for the my\_test.conll}}{13}{figure.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Model architecture for simple language model}}{15}{figure.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Evaluating bert classification language model}}{18}{figure.6}%
+\contentsline {figure}{\numberline {1}{\ignorespaces t-SNE visualization for life based on dep\_w2v\_model}}{7}{figure.1}%
+\contentsline {figure}{\numberline {2}{\ignorespaces t-SNE visualization for life based on anx\_w2v\_model}}{8}{figure.2}%
+\contentsline {figure}{\numberline {3}{\ignorespaces t-SNE visualization for life based on all\_w2v\_model}}{9}{figure.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces conll format of 6th and 7th sentences}}{13}{figure.4}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Universal Dependencies for 10 sentences}}{14}{figure.5}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Outputs for the my\_test.conll}}{15}{figure.6}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Model architecture for simple language model}}{17}{figure.7}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Evaluating bert classification language model}}{20}{figure.8}%

@@ -32,7 +32,7 @@
 	\textbf{{\LARGE Natural Language Processing}}
 	\\[10pt]
 	\LARGE Final Phase Report
-	\thanks{\url{https://github.com/yegmor/NLPProject}}
+	\thanks{All codes are available on \href{https://github.com/yegmor/NLPProject}{my GitHub!}}
 	
 	\\[30pt]
 	\textbf{Yeganeh Morshedzadeh}
@@ -74,7 +74,7 @@
 	\section{Overview}
 	
 	\subsection{Code}
-	We used \href{https://radimrehurek.com/gensim/models/word2vec.html}{Gensim implementation of word2vec}. 
+	We used \href{https://radimrehurek.com/gensim/models/word2vec.html}{Gensim implementation of word2vec} to better draw the plots and show the relations between words. 
 	
 	For this part, we have three Word2Vec models, named dep\_w2v\_model, anx\_w2v\_model, and all\_w2v\_model. Moreover, with boolean parameters, load and save, the model will be saved and/or loaded in the my\_word2vec function.
 	
@@ -88,14 +88,44 @@
 	
 	
 	\subsection{Results and Examples}
+	
+	\subsubsection{Analyze common words}
 	In this part, we used t-SNE visualization. t-SNE is a non-linear dimensionality reduction algorithm that attempts to represent high-dimensional data and the underlying relationships between vectors in a lower-dimensional space.
 	
-	To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}), and other words from the vocabulary (in \textcolor{green}{**green**}).
-	\begin{figure}[H]
-		\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/word2vec_depression_man.png}}
-		\caption{t-SNE visualization for man}
-		\label{word2vec_depression_man}
-	\end{figure}
+	To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}).\\
+	
+	In Figures \ref{word2vec_depression_life}, \ref{word2vec_anxiety_life}, and \ref{word2vec_all_life} we can see the words that are close to the word \emph{life}. 
+	
+	\begin{itemize}
+		\item We can see that in depression model plot (Figure \ref{word2vec_depression_life}), the words are mostly about negative feelings, for example \textit{useless}, \textit{miserable}, \textit{horrible}, and \textit{meaningless}.
+		
+		\begin{figure}[H]
+			\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/word2vec_depression_life.png}}
+			\caption{t-SNE visualization for life based on dep\_w2v\_model}
+			\label{word2vec_depression_life}
+		\end{figure}
+	
+	
+		\item In Figure \ref{word2vec_anxiety_life}, the close words are mostly not negative and more about the life itself, such as \textit{relationship} and \textit{world}. More interestingly, we can see a couple of good vibe words, like \textit{enjoy}, \textit{incredibly}, \textit{happy}, and \textit{good}.
+			
+		\begin{figure}[H]
+			\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/word2vec_anxiety_life.png}}
+			\caption{t-SNE visualization for life based on anx\_w2v\_model}
+			\label{word2vec_anxiety_life}
+		\end{figure}
+	
+	
+		\item Lastly in Figure \ref{word2vec_all_life}, the words are a mixture of the words in the previous model, but they are more general, for example \textit{live}, \textit{living}, \textit{dead}, \textit{future}, and \textit{world}. These most close words to \textit{life} does not contain negative meaning same as \textit{life} itself.	
+		
+		\begin{figure}[H]
+			\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/word2vec_all_life.png}}
+			\caption{t-SNE visualization for life based on all\_w2v\_model}
+			\label{word2vec_all_life}
+		\end{figure}
+		
+	\end{itemize}
+	
+
 	
 	\newpage
 	\part{Tokenization}
@@ -126,7 +156,7 @@
 	\section{Overview}
 	In this part, we used Stanza, which is a Python NLP Package, and a collection of accurate and efficient tools for the linguistic analysis of many human languages. Starting from raw text to syntactic analysis and entity recognition, Stanza brings state-of-the-art NLP models to languages of your choosing.
 	
-	More specifically, we used their \href{http://stanza.run/}{Online Demo} to create a manual CoNLL file based on our dataset (my\_test.conll). Later, we can use \href{https://universaldependencies.org/conllu_viewer.html}{Universal Dependencies CoNLL viewer} to automatically generate parse tree from CoNLL file.
+	More specifically, we used their \href{http://stanza.run/}{Online Demo} to create a manual CoNLL file based on our dataset (my\_test.conll). Later, we can use \href{https://universaldependencies.org/conllu_viewer.html}{Universal Dependencies CoNLL viewer} to automatically generate a parse tree from the CoNLL file.
 	
 	\subsection{Results and Examples}
 	We chose 10 sentences from our dataset as shown below.
