@@ -1,5 +1,22 @@
 \contentsline {part}{I\hspace {1em}Word2Vec}{6}{part.1}%
+\contentsline {section}{\numberline {1}Overview}{6}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Code}{6}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Results and Examples}{6}{subsection.1.2}%
 \contentsline {part}{II\hspace {1em}Tokenization}{8}{part.2}%
+\contentsline {section}{\numberline {2}Overview}{8}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Code}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Results and Examples}{8}{subsection.2.2}%
 \contentsline {part}{III\hspace {1em}Parsing}{10}{part.3}%
+\contentsline {section}{\numberline {3}Overview}{10}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Results and Examples}{10}{subsection.3.1}%
 \contentsline {part}{IV\hspace {1em}Language Model}{14}{part.4}%
-\contentsline {part}{V\hspace {1em}Fine-tuning}{15}{part.5}%
+\contentsline {section}{\numberline {4}Overview}{14}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Code}{14}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Results and Examples}{15}{subsection.4.2}%
+\contentsline {part}{V\hspace {1em}Fine-tuning}{17}{part.5}%
+\contentsline {section}{\numberline {5}Classification}{17}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Code}{17}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Results and Examples}{18}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Language Model}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Code}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Results and Examples}{19}{subsection.6.2}%

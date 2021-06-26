@@ -6,7 +6,8 @@
 \usepackage{color}                    
 \usepackage{hyperref}
 \usepackage{ptext}
-\usepackage{graphicx}                         
+\usepackage{graphicx}   
+%\usepackage[export]{adjustbox}                     
 %\settextfont[Scale=.9]{Calibri}
 
 %\graphicspath{ {images/} }
@@ -70,8 +71,9 @@
 \newpage
 \part{Word2Vec}
 \large{\textbf{Filename:} 3\_word2vec.ipynb}
+\section{Overview}
 
-\section*{Code}
+\subsection{Code}
 We used \href{https://radimrehurek.com/gensim/models/word2vec.html}{Gensim implementation of word2vec}. 
 
 For this part we have three Word2Vec models, named as dep\_w2v\_model, anx\_w2v\_model, and all\_w2v\_model. Moreover, with boolean parameters, load and save, the model will be saved and/or loaded in the my\_word2vec function.
@@ -85,7 +87,7 @@ For this part we have three Word2Vec models, named as dep\_w2v\_model, anx\_w2v\
 \end{table}
 
 
-\section*{Results and Examples}
+\subsection{Results and Examples}
 In this part, we used t-SNE visualization. t-SNE is a non-linear dimensionality reduction algorithm that attempts to represent high-dimensional data and the underlying relationships between vectors in a lower-dimensional space.
 
 To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}), and other words from the vocabulary (in \textcolor{green}{**green**}).
@@ -98,11 +100,12 @@ To make the visualizations more relevant, we will look at the relationships betw
 \newpage
 \part{Tokenization}
 \large{\textbf{Filename:} 4\_tokenization.ipynb}
+\section{Overview}
 
-\section*{Code}
+\subsection{Code}
 In this part, we have used KFold to split(=5) our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we evaluate the model by computing <UNK> on our test dataset, and finally choosing as well as hard coding the best model for the tokenizer. 
 
-\section*{Results and Examples}
+\subsection{Results and Examples}
 Based on Table \ref{token_vocab-size}, in which the percentage of unk tokens to all tokens is calculated for each vocabulary size, we can conclude that by setting higher vocabulary size for the tokenizer, the number of <UNK>s decreases.
 
 Therefore, the best tokenizer is the one with the larger vocabulary size (=9000).
@@ -111,7 +114,7 @@ Therefore, the best tokenizer is the one with the larger vocabulary size (=9000)
 	\caption{Tokenizer outcome based on different vocabulary sizes} 
 	\centering 
 	\vspace{5mm} 
-	\includegraphics[width=\linewidth]{../reports/images/token_vocab-size.png}
+	\includegraphics[width=\linewidth, height=\textheight]{../reports/images/token_vocab-size.png}
 	\label{token_vocab-size} 
 \end{table}
 
@@ -119,11 +122,13 @@ Therefore, the best tokenizer is the one with the larger vocabulary size (=9000)
 
 \newpage
 \part{Parsing}
+\large{\textbf{Filename:} 8\_parsing}
+\section{Overview}
 In this part, we used Stanza, which is a a Python NLP Package, and a collection of accurate and efficient tools for the linguistic analysis of many human languages. Starting from raw text to syntactic analysis and entity recognition, Stanza brings state-of-the-art NLP models to languages of your choosing.
 
 More specifically, we used their \href{http://stanza.run/}{Online Demo} to create a manual CoNLL file based on our dataset (my\_test.conll). Later, we can use \href{https://universaldependencies.org/conllu_viewer.html}{Universal Dependencies CoNLL viewer} to automatically generate parse tree from CoNLL file.
 
-\section*{Results and Examples}
+\subsection{Results and Examples}
 We chose 10 sentences from our dataset as shown below.
 \begin{enumerate}
 	\item I never really showed any sadness when I am with someone.
@@ -154,7 +159,7 @@ For creating the .conll we used Stanza visualization to help us understand Unive
 
 The reported Unlabeled Attachment Score (UAS) on our test file was 94.19, and the output of the code for dependencies are show in Figure \ref{parsing_output}. 
 \begin{figure}[H]
-	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/parsing_output.png}}
+	\centering{\includegraphics[width=\linewidth, height=0.4\textheight, ]{../reports/images/parsing_output.png}}
 	\caption{Outputs for the my\_test.conll}
 	\label{parsing_output}
 \end{figure}
@@ -171,35 +176,49 @@ When comparing Figure \ref{parsing_examples_UDtree} and Figure \ref{parsing_outp
 	 The parent of \emph{or} should be \emph{anxiety}, whereas our model thinks it is \emph{issue}.
 \end{itemize}
  
+Therefore, it looks like that the model in some cases fails to completely understand dependencies in complex sentences. 
 
 \newpage
 \part{Language Model}
 \large{\textbf{Filename:} 5\_language-model.ipynb}
+\section{Overview}
+In this part, we have develop a model of the text that we can then use to generate new sequences of text. It is worth noting that we have used \emph{selftext\_clean} column of our dataframe to train this model.
 
-In this part, we have develop a model of the text that we can then use to generate new sequences of text.
-
-\section*{Code}
+\subsection{Code}
 We will start by preparing the data for modeling. 
 We have picked a length of 50 words for the length of the input sequences, and we have attached 1 output word at the end of the sequences. Afterwards, we save the long list of sequences.
 
-
-For our language model, after loading our dataset, we used an Embedding Layer to learn the representation of words, and a Long Short-Term Memory (LSTM) recurrent neural network to learn to predict words based on their context. More precisely, we have used a two LSTM hidden layers with 100 memory cells each. Following, we have a dense fully connected layer with 100 neurons connects to the LSTM hidden layers to interpret the features extracted from the sequence.
+For our language model, after loading our dataset, we used an Embedding Layer to learn the representation of words, and a Long Short-Term Memory (LSTM) recurrent neural network to learn to predict words based on their context. More precisely, we have used a two LSTM hidden layers with 100 memory cells each. Following, we have a dense fully connected layer with 100 neurons connects to the LSTM hidden layers to interpret the features extracted from the sequence. The summary of the model is shown in Figure \ref{normal-lm_arch}.
 
 After the model is trained, we use generate\_seq function that takes as input the model, the tokenizer, input sequence length, the seed text, and the number of words to generate. 
 
-\section*{Results and Examples}
-
+Moreover, with boolean parameters, load\_bool and save, the specific model will be saved and/or loaded.
 \begin{figure}[H]
-	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/normal-lm_examples.png}}
-	\caption{Examples for simple language model}
-	\label{normal-lm_examples}
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/normal-lm_arch.png}}
+	\caption{Model architecture for simple language model}
+	\label{normal-lm_arch}
 \end{figure}
 
+\subsection{Results and Examples}
+Since we have used \emph{selftext\_clean} column of our data, and threfore the stopwords as well as punctuation symbols are removed, we see that our model can not follow grammatical rules and make complete sentences. 
+\\In addition, as we have not used pretrain models, the model requires more data to generate better sentences. 
+
+Overall, the model was somehow not bad at capturing the context of the dataset. 
+
+In Figure \ref{normal-lm_examples}, by feeding the seed text, obtained randomly from either depression or anxiety dataset, the model generates a sequence.
+\begin{table}[H]
+	\caption{Examples for simple language model} 
+	\centering 
+	\vspace{5mm} 
+	\includegraphics[width=1.2\linewidth, 
+	keepaspectratio]{../reports/images/normal-lm_examples.png}
+	\label{normal-lm_examples} 
+\end{table}
 
 \newpage
 \part{Fine-tuning}
 
-\section*{Classification}
+\section{Classification}
 \large{\textbf{Filename:} 6\_finetune\_classification.ipynb}
 
 Since some files exceeded GitHub's maximum file size (100Mb), we have uploaded them in Google drive.
@@ -207,7 +226,7 @@ Since some files exceeded GitHub's maximum file size (100Mb), we have uploaded t
 	\item \href{https://drive.google.com/file/d/1Lbbhh2N92k3IjuZ5TObauPd2en5qAT6i/view?usp=sharing}{bert\_classification\_lm-pytorch\_model.bin}
 \end{itemize}
 
-\subsection*{Code}
+\subsection{Code}
 
 \begin{figure}[H]
 	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/classification-lm_train.png}}
@@ -221,7 +240,7 @@ Since some files exceeded GitHub's maximum file size (100Mb), we have uploaded t
 	\label{classification-lm_eval}
 \end{figure}
 
-\subsection*{Results and Examples}
+\subsection{Results and Examples}
 \begin{figure}[H]
 	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/classification-lm_examples.png}}
 	\caption{Examples for bert classification model}
@@ -229,7 +248,7 @@ Since some files exceeded GitHub's maximum file size (100Mb), we have uploaded t
 \end{figure}
 
 
-\section*{Language Model}
+\section{Language Model}
 \large{\textbf{Filename:} 7\_finetune\_language-model.ipynb}
 
 Since some files exceeded GitHub's maximum file size (100Mb), we have uploaded them in Google drive. 
@@ -244,12 +263,12 @@ In this part, we have used our Reddit dataset to fine-tune our distilgpt-2.
 
 For this purpose, we first prepare the dataset and build a TextDataset, load the pre-trained GPT-2 model and tokenizer, initialize Trainer with TrainingArguments, and finally, train and save the model. 
 
-\subsection*{Code}
+\subsection{Code}
 The TextDataset is a custom implementation of the Pytroch Dataset class implemented by the transformers(4.2.2) library.
 \\Also, we have used the tokenzier from the distilgpt-2 model on huggingface.
 \\Afterwards, we initialize Trainer class that provides an API for feature-complete training, and we set the Hyperparameters we are going to use in the TrainingArguments.
 
-\subsection*{Results and Examples}
+\subsection{Results and Examples}
 \begin{figure}[H]
 	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/finetune-lm_examples.png.png}}
 	\caption{Examples for distilgpt2 language model}
