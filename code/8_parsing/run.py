@@ -164,6 +164,11 @@ if __name__ == "__main__":
         print("Final evaluation on test set",)
         parser.model.eval()
         UAS, dependencies = parser.parse(test_data)
-        print("\n*********\ndependecies:", dependencies)
+
+        print("\n*********\n len dependecies:", len(dependencies))
+        for i, depend in enumerate(dependencies):
+            print("\n", i+1, "-> len=", len(depend), "\t", depend)
+        # print("\n\ndependecies:\n", dependencies, "\n")
+
         print("- test UAS: {:.2f}".format(UAS * 100.0))
         print("Done!")

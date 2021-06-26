@@ -72,7 +72,7 @@
 \large{\textbf{Filename:} 3\_word2vec.ipynb}
 
 \section*{Code}
-We use Gensim implementation of word2vec: https://radimrehurek.com/gensim/models/word2vec.html
+We used \href{https://radimrehurek.com/gensim/models/word2vec.html}{Gensim implementation of word2vec}. 
 
 For this part we have three Word2Vec models, named as dep\_w2v\_model, anx\_w2v\_model, and all\_w2v\_model. Moreover, with boolean parameters, load and save, the model will be saved and/or loaded in the my\_word2vec function.
 
@@ -81,15 +81,14 @@ For this part we have three Word2Vec models, named as dep\_w2v\_model, anx\_w2v\
 	\centering 
 	\vspace{5mm} 
 	\includegraphics[width=0.5\linewidth]{../reports/images/w2v_vocab-size.png}
-	\label{table:w2v_vocab-size} 
+	\label{w2v_vocab-size} 
 \end{table}
 
 
 \section*{Results and Examples}
 In this part, we used t-SNE visualization. t-SNE is a non-linear dimensionality reduction algorithm that attempts to represent high-dimensional data and the underlying relationships between vectors in a lower-dimensional space.
 
-To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}), and other words from the vocabulary (in \textcolor{green}{**green**})
-
+To make the visualizations more relevant, we will look at the relationships between a query word (in \textcolor{red}{**red**}), its most similar words in the model (in \textcolor{blue}{**blue**}), and other words from the vocabulary (in \textcolor{green}{**green**}).
 \begin{figure}[H]
 	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/word2vec_depression_man.png}}
 	\caption{t-SNE visualization for man}
@@ -104,7 +103,7 @@ To make the visualizations more relevant, we will look at the relationships betw
 In this part, we have used KFold to split(=5) our data into train and test. Afterwards, we train SentencePiece model based on the data. Lastly, we evaluate the model by computing <UNK> on our test dataset, and finally choosing as well as hard coding the best model for the tokenizer. 
 
 \section*{Results and Examples}
-Based on Table\ref{table:token_vocab-size}, in which the percentage of unk tokens to all tokens is calculated for each vocabulary size, we can conclude that by setting higher vocabulary size for the tokenizer, the number of <UNK>s decreases.
+Based on Table \ref{token_vocab-size}, in which the percentage of unk tokens to all tokens is calculated for each vocabulary size, we can conclude that by setting higher vocabulary size for the tokenizer, the number of <UNK>s decreases.
 
 Therefore, the best tokenizer is the one with the larger vocabulary size (=9000).
 
@@ -113,7 +112,7 @@ Therefore, the best tokenizer is the one with the larger vocabulary size (=9000)
 	\centering 
 	\vspace{5mm} 
 	\includegraphics[width=\linewidth]{../reports/images/token_vocab-size.png}
-	\label{table:token_vocab-size} 
+	\label{token_vocab-size} 
 \end{table}
 
 
@@ -122,18 +121,10 @@ Therefore, the best tokenizer is the one with the larger vocabulary size (=9000)
 \part{Parsing}
 In this part, we used Stanza, which is a a Python NLP Package, and a collection of accurate and efficient tools for the linguistic analysis of many human languages. Starting from raw text to syntactic analysis and entity recognition, Stanza brings state-of-the-art NLP models to languages of your choosing.
 
-More specifically, we used their \href{http://stanza.run/}{Online Demo} to create a manual .CoNLL file based on our dataset. Later, we can use \href{https://universaldependencies.org/conllu_viewer.html}{Universal Dependencies CoNLL viewer} to automatically generate parse tree from .CoNLL file.
+More specifically, we used their \href{http://stanza.run/}{Online Demo} to create a manual CoNLL file based on our dataset (my\_test.conll). Later, we can use \href{https://universaldependencies.org/conllu_viewer.html}{Universal Dependencies CoNLL viewer} to automatically generate parse tree from CoNLL file.
 
 \section*{Results and Examples}
-
-The reported Unlabeled Attachment Score (UAS) on our test file was 86.05.
-
-\begin{figure}[H]
-	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/parsing_examples_UDtree.png}}
-	\caption{Universal Dependencies for 10 sentences}
-	\label{parsing_examples}
-\end{figure}
-
+We chose 10 sentences from our dataset as shown below.
 \begin{enumerate}
 	\item I never really showed any sadness when I am with someone.
 	\item he is a good person, and I know that.
@@ -146,6 +137,40 @@ The reported Unlabeled Attachment Score (UAS) on our test file was 86.05.
 	\item all these emotions are too much sometimes. 
 	\item everybody is going to die.
 \end{enumerate}
+
+Afterwards, we created a CoNLL file as shown in Figure \ref{parsing_conll}. 
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/parsing_conll.png}}
+	\caption{conll format of 6th and 7th sentences}
+	\label{parsing_conll}
+\end{figure}
+
+For creating the .conll we used Stanza visualization to help us understand Universal Dependencies. (Figure \ref{parsing_examples_UDtree})
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/parsing_examples_UDtree.png}}
+	\caption{Universal Dependencies for 10 sentences}
+	\label{parsing_examples_UDtree}
+\end{figure}
+
+The reported Unlabeled Attachment Score (UAS) on our test file was 94.19, and the output of the code for dependencies are show in Figure \ref{parsing_output}. 
+\begin{figure}[H]
+	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/parsing_output.png}}
+	\caption{Outputs for the my\_test.conll}
+	\label{parsing_output}
+\end{figure}
+
+When comparing Figure \ref{parsing_examples_UDtree} and Figure \ref{parsing_output}, we can see couple of mistakes:
+\begin{itemize}
+	\item \textbf{Sentence no.2}: \emph{he is a good person, and I know that.}
+	
+	The parent of \emph{and}, \emph{person}, and \emph{,} should be \emph{know}, and that \emph{know} is the root. However, our model thinks\emph{person} is the root.
+	
+	\item \textbf{Sentence no.5}:
+	 \emph{how can you tell the difference between an actual issue or anxiety?}
+	 
+	 The parent of \emph{or} should be \emph{anxiety}, whereas our model thinks it is \emph{issue}.
+\end{itemize}
+ 
 
 \newpage
 \part{Language Model}
@@ -163,6 +188,7 @@ For our language model, after loading our dataset, we used an Embedding Layer to
 After the model is trained, we use generate\_seq function that takes as input the model, the tokenizer, input sequence length, the seed text, and the number of words to generate. 
 
 \section*{Results and Examples}
+
 \begin{figure}[H]
 	\centering{\includegraphics[width=\linewidth, height=\textheight, keepaspectratio]{../reports/images/normal-lm_examples.png}}
 	\caption{Examples for simple language model}

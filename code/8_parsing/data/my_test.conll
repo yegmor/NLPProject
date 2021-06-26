@@ -1,15 +1,13 @@
 1	I	_	PRON	PRP	_	4	nsubj	_	_
 2	never	_	ADV	RB	_	4	advmod	_	_
 3	really	_	ADV	RB	_	4	advmod	_	_
-4	showed	_	VERB	VBD	_	0	root	_	_
-5	any _	DET	DT	_	6	det	_	_
-6	sadness	_	NOUN	NN	_	4	obj	_	_
-7	when	_	SCONJ	WRB	_	11	mark	_	_
-8	I	_	PRON	PRP	_	11	nsubj	_	_
-9	am	_	AUX	VBP	_	11	cop	_	_
-10	with	_	ADP	IN	_	11	case	_	_
-11  someone	_	PRON	NN	_	4	advcl	_	_
-12	.	_	PUNCT	.	_	4	punct	_	_
+4	talked	_	VERB	VBD	_	0	root	_	_
+5	when	_	SCONJ	WRB	_	9	mark	_	_
+6	I	_	PRON	PRP	_	9	nsubj	_	_
+7	am	_	AUX	VBP	_	9	cop	_	_
+8	with	_	ADP	IN	_	9	case	_	_
+9	someone	_	PRON	NN	_	4	advcl	_	_
+10	.	_	PUNCT	.	_	4	punct	_	_
 
 1	he	_	PRON	PRP	_	5	nsubj	_	_
 2	is	_	AUX	VBZ	_	5	cop	_	_
@@ -21,13 +19,13 @@
 8	I	_	PRON	PRP	_	9	nsubj	_	_
 9	know	_	VERB	VBP	_	0	root	_	_
 10	that	_	PRON	DT	_	9	obj	_	_
-11 	.	_	PUNCT	.	_	5	punct	_	_
+11	.	_	PUNCT	.	_	5	punct	_	_
 
 1	how	_	ADV	WRB	_	4	advmod	_	_
 2	am	_	AUX	VBP	_	4	aux	_	_
 3	I	_	PRON	PRP	_	4	nsubj	_	_
 4	feeling	_	VERB	VBG	_	0	root	_	_
-5 	?	_	PUNCT	.	_	4	punct	_	_
+5	?	_	PUNCT	.	_	4	punct	_	_
 
 1	last	_	ADJ	JJ	_	2	amod	_	_
 2	year	_	NOUN	NN	_	4	obl:tmod	_	_
@@ -39,7 +37,7 @@
 8	amount	_	NOUN	NN	_	4	obl	_	_
 9	of	_	ADP	IN	_	10	case	_	_
 10	stress	_	NOUN	NN	_	8	nmod	_	_
-11 	.	_	PUNCT	.	_	4	punct	_	_
+11	.	_	PUNCT	.	_	4	punct	_	_
 
 1	how	_	ADV	WRB	_	4	advmod	_	_
 2	can	_	AUX	MD	_	4	aux	_	_
@@ -53,13 +51,13 @@
 10	issue	_	NOUN	NN	_	6	nmod	_	_
 11	or	_	CCONJ	CC	_	12	cc	_	_
 12	anxiety	_	NOUN	NN	_	10	conj	_	_
-13 	?	_	PUNCT	.	_	4	punct	_	_
+13	?	_	PUNCT	.	_	4	punct	_	_
 
 1	please	_	INTJ	UH	_	4	discourse	_	_
 2	do	_	AUX	VB	_	4	aux	_	_
 3	not	_	PART	RB	_	4	advmod	_	_
 4	judge	_	VERB	VB	_	0	root	_	_
-5 	.	_	PUNCT	.	_	4	punct	_	_
+5	.	_	PUNCT	.	_	4	punct	_	_
 
 1	what	_	PRON	WRB	_	4	obj	_	_
 2	do	_	AUX	MD	_	4	aux	_	_
@@ -70,7 +68,7 @@
 7	meaning	_	NOUN	NN	_	4	ccomp	_	_
 8	of	_	ADP	IN	_	9	case	_	_
 9	life	_	NOUN	NN	_	7	nmod	_	_
-10 	?	_	PUNCT	.	_	4	punct	_	_
+10	?	_	PUNCT	.	_	4	punct	_	_
 
 1	today	_	NOUN	NN	_	6	nsubj	_	_
 2	was	_	AUX	VBD	_	6	cop	_	_
@@ -78,20 +76,20 @@
 4	very	_	ADV	RB	_	5	advmod	_	_
 5	strange	_	ADJ	JJ	_	6	amod	_	_
 6	day	_	NOUN	NN	_	0	root	_	_
-7 	.	_	PUNCT	.	_	6	punct	_	_
+7	.	_	PUNCT	.	_	6	punct	_	_
 
 1	all	_	DET	PDT	_	3	det:predet	_	_
 2	these	_	DET	DT	_	3	det	_	_
 3	emotions	_	NOUN	NNS	_	6	nsubj	_	_
 4	are	_	AUX	VBP	_	6	cop	_	_
-5	too	_	ADV	RB	_	8	advmod	_	_
+5	too	_	ADV	RB	_	6	advmod	_	_
 6	much	_	ADJ	JJ	_	0	root	_	_
 7	sometimes	_	ADV	RB	_	6	advmod	_	_
-8 	.	_	PUNCT	.	_	6	punct	_	_
+8	.	_	PUNCT	.	_	6	punct	_	_
 
 1	everybody	_	PRON	NN	_	3	nsubj	_	_
 2	is	_	AUX	VBZ	_	3	aux	_	_
 3	going	_	VERB	VBG	_	0	root	_	_
 4	to	_	PART	TO	_	5	mark	_	_
 5	die	_	VERB	VB	_	3	xcomp	_	_
-6 	.	_	PUNCT	.	_	3	punct	_	_
+6	.	_	PUNCT	.	_	3	punct	_	_
