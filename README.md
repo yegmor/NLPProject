@@ -1,5 +1,5 @@
 # Natural Language Processing
-## Final Phase
+### The final report is available at https://github.com/yegmor/NaturalLanguageProcessing_Project/blob/main/original_final_phase_report.pdf.
 In this project, we tried to use Natural Language Processing to
 better understand Depression and Anxiety posts.1 The dataset is
 gathered from Reddit communities [r/depression](https://www.reddit.com/r/depression) and [r/Anxiety](https://www.reddit.com/r/Anxiety).
@@ -8,7 +8,7 @@ Docs](https://docs.google.com/document/d/1tHGEmEgn8-sp8MD72d8NjnZsq-GpVupzsMWgnq
 data and made some exploratory data analysis.
 In the final phase, we went deeper and tried various NLP tasks,
 such as, computing Word2Vec, Tokenization, Parsing, and creating a
-language model based on our dataset.
+language model based on our dataset. 
 
 <div dir="rtl">
 
